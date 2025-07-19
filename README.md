@@ -69,7 +69,85 @@ void logPosition(int pos) {
    - **Move Backward** to rotate it toward 0°.
    - **Replay** to move through all previously recorded positions in order.
 
-## 🛠️ Future Enhancements
-- Add support for multiple servos.
-- Implement EEPROM storage to retain history after power-off.
-- Visual display for position feedback.
+## 👨‍💻 Code
+```cpp
+#include <Servo.h>
+
+Servo servo_9;
+int currentPos = 90;  // Start at center
+
+const int minPos = 0;
+const int maxPos = 180;
+
+int ifgood1 = 0;
+int ifgood2 = 0;
+int TIME = 0;
+
+ int historySize = 900;        // Max number of positions to store
+int positionHistory[900];  // Array to store positions
+int historyIndex = 0;              // Tracks the current index
+
+void setup() {
+  servo_9.attach(11, 500, 2500);
+  servo_9.write(currentPos);
+  logPosition(currentPos);
+
+  pinMode(7, INPUT);  // Replay button
+  pinMode(8, INPUT);  // Move forward
+  pinMode(9, INPUT);  // Move backward
+
+  
+  
+  // Optional debug
+  // Serial.begin(9600);
+}
+
+void loop() {
+  ifgood1 = digitalRead(8);
+  ifgood2 = digitalRead(9);
+  TIME = digitalRead(7);
+
+  if (ifgood1 == LOW) {
+    for (int i = 0; i < 30; i++) {
+      if (currentPos < maxPos) {
+        currentPos++;
+        servo_9.write(currentPos);
+        logPosition(currentPos);
+        delay(15);
+      }
+    }
+  }
+
+  if (ifgood2 == LOW) {
+    for (int i = 0; i < 30; i++) {
+      if (currentPos > minPos) {
+        currentPos--;
+        servo_9.write(currentPos);
+        logPosition(currentPos);
+        delay(15);
+      }
+    }
+  }
+
+  // Replay movement when TIME button is pressed
+  if (TIME == LOW) {
+    for (int i = 0; i < historyIndex; i++) {
+      servo_9.write(positionHistory[i]);
+      delay(15);  // Same delay used during logging
+    }
+  }
+}
+
+// Store position in history array, rolling over if needed
+void logPosition(int pos) {
+  positionHistory[historyIndex] = pos;
+  historyIndex++;
+  if (historyIndex >= historySize) {
+    historyIndex = 0;  // Wrap around (circular buffer)
+  }
+
+  // Optional:
+  // Serial.print("Logged: ");
+  // Serial.println(pos);
+}
+```
