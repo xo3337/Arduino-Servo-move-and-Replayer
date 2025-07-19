@@ -19,12 +19,12 @@ This project controls a servo motor using push buttons and records its position 
 ## 🧰 Components Used
 
 - Arduino UNO
-- 1x Servo motor (connected to pin 11)
+- 4x Servo motor (connected to pin 11)
 - 3x Push buttons (Move Forward, Move Backward, Replay)
 - 3x 10kΩ pull-down resistors
 - Breadboard & jumper wires
 
-> The setup shown also allows extension to control more servos using similar logic (4 are shown in the image, but only one is coded).
+
 
 ## 📌 Pin Configuration
 
