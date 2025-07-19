@@ -4,6 +4,8 @@
 This project controls a servo motor using push buttons and records its position history. Once the user presses the "Replay" button, the servo replays the recorded movement.
 
 
+## 👷‍♂️ Tinkercad link
+- https://www.tinkercad.com/things/2P2sipGfPus-bodacious-crift-kup/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard
 
 ## 📷 Image of the circuit 
 <img width="637" height="719" alt="Screenshot 2025-07-19 050213" src="https://github.com/user-attachments/assets/8209148f-60f7-4e43-b40c-58be3bb49535" />
