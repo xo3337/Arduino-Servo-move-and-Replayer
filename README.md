@@ -6,7 +6,8 @@ This project controls a servo motor using push buttons and records its position 
 ## 📷 Overview
 
 - Image of the circuit:  
-![Circuit Diagram](./9e469a58-4489-42dc-8bac-230aa7da1c49.png)
+![Circuit Diagram](<img width="637" height="719" alt="Screenshot 2025-07-19 050213" src="https://github.com/user-attachments/assets/9a6f59e6-2c64-41f1-9ee7-d3355bd21a71" />
+)
 
 - Demonstration video:  
 [Watch on GitHub](https://github.com/user-attachments/assets/24025987-ef11-4caa-96fd-35e9d788da52)
