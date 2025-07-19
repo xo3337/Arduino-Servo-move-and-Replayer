@@ -9,7 +9,7 @@ This project controls a servo motor using push buttons and records its position 
 <img width="637" height="719" alt="Screenshot 2025-07-19 050213" src="https://github.com/user-attachments/assets/8209148f-60f7-4e43-b40c-58be3bb49535" />
 
 
--- Demonstration video:
+ Demonstration video:
  https://github.com/user-attachments/assets/a1e755a4-ac09-46df-8241-e1ea5bb23133
 
 
